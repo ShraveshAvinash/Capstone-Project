@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+   
+</head>
+<body class="bg">
+    
+        <div class="fluid-container">
+        {% comment %} {% include 'mediTemp/navbar.html' %} {% endcomment %}
+
+    
+    {% block content %} {% endblock content %}  
+    {% block side %} {% endblock side %}
+    </div>
+
+    
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    {% comment %} <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <df-messenger
+    intent="WELCOME"
+    chat-title="Travelbot"
+    agent-id="35588bae-c8a0-4f36-be38-7f446a5a989c"
+    language-code="en"
+    ></df-messenger>  {% endcomment %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% extends "mediTemp/base.html" %}
+{% load static %}
+{% block title %}MediSyncHub {% endblock title %}
+
+{% block content %}
+    <div class ="quote">
+    <h3>WELCOME TO VIRTUAL DOCTOR CONSULTATION</h3></br>
+    <h1> MEDI-SYNC-HUB</span></h1></br>
+    <p><q>Each patient carries his own doctor inside him.</q>  </p>
+    <a class="btn btn-lg btn-light btn-space" href="{% url 'hm' %}">For Doctor</a>
+    <a class="btn btn-lg btn-outline-light btn-space" href="{% url 'hm' %}">For Patient</a>
+    
+    </div>
+    
+
+{%  endblock content %}
