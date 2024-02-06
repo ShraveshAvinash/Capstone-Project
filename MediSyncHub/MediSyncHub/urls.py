@@ -18,7 +18,12 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from MediSyncApp import views
-urlpatterns = [
+urlpatterns = [ 
     path('admin/', admin.site.urls),
     path('',views.home,name='hm'),
+    path('p_registration/',views.p_registration,name='p_registration'),
+    path('user_login/',views.user_login,name='login'),
+    path('about/',views.about,name='about'),
+    path('patient_dashboard/',views.patient_dashboard,name='patient_dashboard'),
+    path('logout/',views.user_logout,name='logout')
 ]
