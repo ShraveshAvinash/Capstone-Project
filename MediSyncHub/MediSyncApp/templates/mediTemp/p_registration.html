@@ -2,31 +2,52 @@
 {% load static %}
 
 
-{% block title %} Signup {% endblock title %}
+{% block title %} Signup-Patient {% endblock title %}
 
 {% block content %}
-<div class="container">
-<div class="col-sm-8 ">
-    {% if messages %}
-    {% for message in messages %}
-    <p {% if message.tags %} class="alert alert-{{ message.tags}} mb-2" {% endif %}>{{ message}}</p>
-    {% endfor %}
-    {% endif %}
-      <h3 class="text-center my-3 af" style="color: white;"> Register To Medi-Sync Hub as Patient </h3>
-      <form action="" method="Post">
+</br>
+</br>
+</br>
+</br>
+
+
+<!-- ======= Appointment Section ======= -->
+<section id="appointment" class="appointment section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+
+      {% if messages %}
+      {% for message in messages %}
+      <p {% if message.tags %} class="alert alert-{{ message.tags}} mb-2" {% endif %}>{{ message}}</p>
+      {% endfor %}
+      {% endif %}
+      <section id="cta" class="cta">
+        <div class="container" data-aos="zoom-in">
+    
+          <div class="text-center">
+            <h3>Register To Medi-Sync Hub as Patient</h3>
+          </div>
+        </div>
+      </section>
+      <form action="" method="Post" class="php-email-form" >
         {% csrf_token %}
         {% for fm in form %}
-        <div class="form group text-white">
+        <div class="form-group">
           {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small>   
         </div>   
-        {% endfor %}</br>
-        <input type="submit" value="Submit" class="btn btn-lg btn-outline-light btn-space">
+        {% endfor %}</br>  
+        <div class="text-center"><button type="submit">Register</button></div>
         {% if form.non_field_errors %}
         {% for error in form.non_field_errors %}
         <p class="alert alert-danger my-3 ">{{error}}</p>
         {% endfor %}
         {% endif %}
       </form>
+
   </div>
-</div>
+</section>
+
+
+
 {% endblock content %}

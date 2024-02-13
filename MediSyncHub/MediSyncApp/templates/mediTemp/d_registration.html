@@ -1,0 +1,32 @@
+{% extends 'mediTemp/base.html'  %}
+{% load static %}
+
+
+{% block title %} Signup-Doctor {% endblock title %}
+
+{% block content %}
+<div class="container">
+<div class="col-sm-8 ">
+    {% if messages %}
+    {% for message in messages %}
+    <p {% if message.tags %} class="alert alert-{{ message.tags}} mb-2" {% endif %}>{{ message}}</p>
+    {% endfor %}
+    {% endif %}
+      <h3 class="text-center my-3 af" style="color: white;"> Register To Medi-Sync Hub as Doctor </h3>
+      <form action="" method="Post">
+        {% csrf_token %}
+        {% for fm in form %}
+        <div class="form group text-white">
+          {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small>   
+        </div>   
+        {% endfor %}</br>  
+        <input type="submit" value="Submit" class="btn btn-lg btn-outline-light btn-space">
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors %}
+        <p class="alert alert-danger my-3 ">{{error}}</p>
+        {% endfor %}
+        {% endif %}
+      </form>
+  </div>
+</div>
+{% endblock content %}

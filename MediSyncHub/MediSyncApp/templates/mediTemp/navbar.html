@@ -1,45 +1,70 @@
 {% load static %}
-<nav class="navbar navbar-expand-sm navbg">
+<div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+      <div class="align-items-center d-none d-md-flex">
+        <i class="bi bi-clock"></i> Monday - Saturday, 8AM to 10PM
+      </div>
+      <div class="d-flex align-items-center">
+        <i class="bi bi-phone"></i> Call us now +1 5589 55488 55
+      </div>
+    </div>
+  </div>
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+  <a class="navbar-brand" href="#">
+    <img src="{% static '/Images/logo.jpg' %}" alt="" class="rounded-circle"width="60" height="60" class="d-inline-block align-top">
+  </a> 
+<nav id="navbar" class="navbar order-last order-lg-0">
   
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="{% static '/images/logoo.jpeg' %}" alt="" class="rounded-circle"width="60" height="60" class="d-inline-block align-top">
-      </a> 
+   
+      
       <a class="navbar-brand hdn"  href="{% url 'hm' %}">MediSync-Hub</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mymenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse " id="mymenu">
-        <ul class="navbar-nav ml-auto">
+    
+    
+        <ul >
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About</a>
+            <a class="nav-link scrollto" aria-current="page" href="{% url 'about' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'about' %}">About</a>
+            <a class="nav-link scrollto" href="{% url 'about' %}">About</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="{% url 'about' %}">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="{% url 'about' %}">Department</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="{% url 'd_registration' %}">Doctor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link scrollto" href="{% url 'p_registration' %}">Patient</a>
+          </li>
+          
           
           {% if request.user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Sign out</a>
+            <a class="nav-link scrollto" href="{% url 'logout' %}">Sign out</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'patient_dashboard' %}">Dashboard</a>
+            <a class="nav-link scrollto" href="{% url 'patient_dashboard' %}">Dashboard</a>
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'p_registration' %}">Sign up</a>
+            <a class="nav-link scrollto" href="{% url 'p_registration' %}">Sign up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Sign in</a>
+            <a class="nav-link scrollto" href="{% url 'login' %}">Sign in</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'hm' %}">Contact-Us</a>
+            <a class="nav-link scrollto" href="#contact">Contact-Us</a>
           </li>
           {% endif %}
           
         </ul>
-        
-      </div>
-    
-    </div>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      
   </nav>
+  <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+</div>
+</header>
